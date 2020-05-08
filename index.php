@@ -1,16 +1,11 @@
 <?php
 
-use Src\Creational\Factory\Dialog\Dialogs\SystemDialog;
-use Src\Creational\Factory\Dialog\Dialogs\WebDialog;
-
+use Src\Creational\Builder\Builders\ComputerWithCoolingSystemBuilder;
+use Src\Creational\Builder\Director;
 
 require_once __DIR__ . "/../vendor" . DIRECTORY_SEPARATOR . "autoload.php";
 
- /**
-  * ** to run Factory pattern
-  */
-//$systemDialog = new SystemDialog();
-//$webDialog = new WebDialog();
-//echo $systemDialog->renderDialog();
-//echo $webDialog->renderDialog();
 
+$director = new Director(new ComputerWithCoolingSystemBuilder());
+
+var_dump($director->makeComputer());
